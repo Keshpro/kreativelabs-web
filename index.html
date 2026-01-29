@@ -3,52 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KreativeLabs | IT Solutions</title>
+    <title>KreativeLabs | Elite IT Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">Kreative<span>Labs</span></div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="mailto:your-email@gmail.com" class="btn-contact">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">Kreative<span>Labs</span>.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Works</a></li>
+            <li><a href="#contact" class="btn-contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    </nav>
 
-    <section class="hero">
+    <section id="home" class="hero">
+        <video autoplay muted loop playsinline class="back-video">
+            <source src="video.mp4" type="video/mp4">
+        </video>
+        
+        <div class="hero-overlay"></div>
+
         <div class="hero-content">
-            <h1>Building Future-Ready <br><span>Digital Infrastructure</span></h1>
-            <p>High-end IT solutions for global businesses. Specialized in digitalizing the apparel industry.</p>
-            <a href="mailto:your-email@gmail.com" class="btn-main">Get Started</a>
+            <h3>Welcome to the Future</h3>
+            <h1>Innovation Meets <span class="gold-text">Elegance</span></h1>
+            <p>Transforming businesses with high-end digital solutions, AI integration, and premium web architectures.</p>
+            <div class="hero-btns">
+                <a href="#portfolio" class="btn btn-primary">View Our Work</a>
+                <a href="#contact" class="btn btn-outline">Consult Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Who We Are</h2>
+                <div class="line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>We are KreativeLabs</h3>
+                    <p>KreativeLabs is a premium IT consultancy firm dedicated to delivering world-class digital solutions. We bridge the gap between complex technology and seamless user experiences.</p>
+                </div>
+                <div class="vision-box">
+                    <div class="v-card tilt-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h4>Our Goal</h4>
+                        <p>To empower 500+ businesses with automated, AI-driven digital infrastructures by 2030.</p>
+                    </div>
+                    <div class="v-card tilt-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Our Vision</h4>
+                        <p>To be the global standard for luxury tech solutions, defining the future of digital elegance.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2>Our Core Services</h2>
-        <div class="service-grid">
-            <div class="service-card">
-                <h3>Web & App Development</h3>
-                <p>Scalable, high-performance digital platforms using modern tech stacks.</p>
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <div class="line"></div>
             </div>
-            <div class="service-card">
-                <h3>Custom Software</h3>
-                <p>Tailored software solutions designed to automate and scale your business.</p>
+            <div class="cards-container">
+                <div class="card tilt-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Web Development</h3>
+                    <p>High-performance websites tailored for speed, security, and aesthetics.</p>
+                </div>
+                <div class="card tilt-card">
+                    <i class="fas fa-mobile-screen"></i>
+                    <h3>Mobile Apps</h3>
+                    <p>iOS & Android applications designed for intuitive user engagement.</p>
+                </div>
+                <div class="card tilt-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI Solutions</h3>
+                    <p>Integrating Artificial Intelligence to automate and optimize your workflow.</p>
+                </div>
             </div>
-            <div class="service-card highlight">
-                <h3>Apparel Tech</h3>
-                <p>Specialized digital transformation for the clothing and garment industry.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Works</h2>
+                <div class="line"></div>
+            </div>
+            <div class="portfolio-grid">
+                <div class="work-item tilt-card">
+                    <div class="work-img">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project 1">
+                    </div>
+                    <div class="work-info">
+                        <h4>FinTech Dashboard</h4>
+                        <p>Web Application</p>
+                    </div>
+                </div>
+                <div class="work-item tilt-card">
+                    <div class="work-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project 2">
+                    </div>
+                    <div class="work-info">
+                        <h4>Luxe E-Commerce</h4>
+                        <p>Online Store</p>
+                    </div>
+                </div>
+                <div class="work-item tilt-card">
+                    <div class="work-img">
+                        <img src="https://images.unsplash.com/photo-1555421689-49263376da7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Project 3">
+                    </div>
+                    <div class="work-info">
+                        <h4>AI Data System</h4>
+                        <p>Machine Learning</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Us</h2>
+                <div class="line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature tilt-card">
+                    <i class="fas fa-rocket"></i>
+                    <h4>Fast Delivery</h4>
+                    <p>We respect your time and deliver projects on schedule.</p>
+                </div>
+                <div class="feature tilt-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Top Security</h4>
+                    <p>Advanced security protocols to protect your data.</p>
+                </div>
+                <div class="feature tilt-card">
+                    <i class="fas fa-headset"></i>
+                    <h4>24/7 Support</h4>
+                    <p>Our dedicated team is always ready to assist you.</p>
+                </div>
+                <div class="feature tilt-card">
+                    <i class="fas fa-gem"></i>
+                    <h4>Premium Quality</h4>
+                    <p>We don't compromise on quality. Perfection is our habit.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 KreativeLabs by Keshan Panditharathna. All Rights Reserved.</p>
-    </header>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>Kreative<span>Labs</span>.</h3>
+                <p>Innovating the digital world, one pixel at a time.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p>hello@kreativelabs.com</p>
+                <p>+94 77 123 4567</p>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 KreativeLabs. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

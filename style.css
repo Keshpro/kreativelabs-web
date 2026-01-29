@@ -1,129 +1,202 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+/* --- Global Variables & Reset --- */
+:root {
+    --bg-color: #0f1014;
+    --card-bg: #1a1c23;
+    --gold: #d4af37;
+    --text-light: #f4f4f4;
+    --text-dim: #a0a0a0;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-    background-color: #0f0f0f;
-    color: #ffffff;
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    font-family: var(--font-body);
     line-height: 1.6;
-    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 10%;
-}
+.container { width: 90%; max-width: 1200px; margin: 0 auto; }
+.gold-text { color: var(--gold); }
+a { text-decoration: none; }
+ul { list-style: none; }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 700;
+/* --- Navbar --- */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 5%; background: rgba(15, 16, 20, 0.95);
+    position: fixed; width: 100%; top: 0; z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
 }
+.logo { font-size: 1.8rem; font-weight: 700; font-family: var(--font-heading); }
+.logo span { color: var(--gold); }
 
-.logo span {
-    color: #007bff; /* Blue accent */
-}
+.nav-links { display: flex; gap: 30px; }
+.nav-links a { color: var(--text-light); font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--gold); }
+.btn-contact { border: 1px solid var(--gold); padding: 8px 20px; color: var(--gold) !important; border-radius: 4px; }
+.btn-contact:hover { background: var(--gold); color: #000 !important; }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+.menu-toggle { display: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
 
-nav ul li {
-    margin-left: 2rem;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ccc;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #007bff;
-}
-
-/* Hero Section */
+/* --- Hero Section (Video) --- */
 .hero {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 10%;
+    height: 100vh;
+    width: 100%;
+    display: flex; align-items: center; justify-content: center; text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+.back-video {
+    position: absolute; right: 0; bottom: 0;
+    min-width: 100%; min-height: 100%;
+    z-index: -2; object-fit: cover;
 }
 
-.hero h1 span {
-    color: #007bff;
+.hero-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.65); z-index: -1;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    color: #aaa;
-    max-width: 600px;
-    margin: 0 auto 2rem;
+.hero-content { z-index: 10; padding: 20px; max-width: 800px; animation: fadeIn 1.5s ease; }
+.hero-content h3 { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hero-content h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+.hero-content p { color: #ddd; margin-bottom: 30px; }
+
+/* Buttons */
+.btn { padding: 12px 30px; border-radius: 2px; font-weight: 500; margin: 0 10px; transition: 0.3s; display: inline-block; }
+.btn-primary { background: var(--gold); color: #000; }
+.btn-primary:hover { background: #b5952f; transform: translateY(-2px); }
+.btn-outline { border: 1px solid #fff; color: #fff; }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+/* --- General Sections --- */
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 2.5rem; margin-bottom: 10px; font-family: var(--font-heading); }
+.line { width: 60px; height: 3px; background: var(--gold); margin: 0 auto; }
+
+/* --- About & Vision --- */
+.about-section { padding: 80px 0; background: #14161b; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about-text p { color: var(--text-dim); margin-top: 15px; }
+
+.vision-box { display: flex; flex-direction: column; gap: 20px; }
+.v-card { background: var(--card-bg); padding: 25px; border-left: 3px solid var(--gold); border-radius: 5px; }
+.v-card h4 { color: var(--text-light); margin: 10px 0 5px; }
+.v-card i { color: var(--gold); font-size: 1.5rem; }
+
+/* --- Services & Features (Cards) --- */
+.services, .why-us { padding: 80px 0; }
+.cards-container, .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+
+/* 3D Tilt Style */
+.tilt-card {
+    background: var(--card-bg); padding: 35px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.05); border-radius: 10px;
+    transform-style: preserve-3d; transform: perspective(1000px);
 }
 
-.btn-main {
-    background-color: #007bff;
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: 0.3s;
+.card i, .feature i { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; transform: translateZ(20px); }
+.card h3, .feature h4, .v-card h4 { transform: translateZ(20px); }
+.card p, .feature p { color: var(--text-dim); font-size: 0.9rem; margin-top: 10px; transform: translateZ(20px); }
+
+/* --- Portfolio (Works) --- */
+.portfolio { padding: 80px 0; background: #0a0b0e; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.work-item { position: relative; overflow: hidden; border-radius: 10px; min-height: 250px; }
+.work-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 250px; }
+
+.work-info {
+    position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px;
+    background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+    transform: translateZ(30px);
+}
+.work-info h4 { color: var(--gold); }
+
+/* --- Footer --- */
+footer { background: #050506; padding-top: 50px; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-content { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 30px; padding-bottom: 30px; }
+.footer-col h3 { font-size: 1.5rem; margin-bottom: 15px; }
+.footer-col h4 { margin-bottom: 15px; color: var(--gold); }
+.footer-col p { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 8px; }
+.footer-social a { color: #fff; margin-right: 15px; font-size: 1.2rem; transition: 0.3s; }
+.footer-social a:hover { color: var(--gold); }
+.footer-bottom { text-align: center; padding: 20px; background: #000; font-size: 0.8rem; color: #555; }
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Responsive */
+/* --- RESPONSIVE DESIGN (Mobile & Tablet) --- */
+
+@media (max-width: 991px) {
+    /* Tablet වලදී Container එකේ ඉඩ අඩු කිරීම */
+    .container { width: 95%; }
+    
+    /* Hero Section එකේ අකුරු ටිකක් පොඩි කිරීම */
+    .hero-content h1 { font-size: 3rem; }
 }
 
-.btn-main:hover {
-    background-color: #0056b3;
+@media (max-width: 768px) {
+    /* 1. Navbar (Mobile Menu) */
+    .menu-toggle { 
+        display: block; 
+        z-index: 1001; /* Menu එකට උඩින් පේන්න */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 70%; /* Phone screen එකෙන් 70%ක් ගන්න */
+        height: 100vh;
+        background: #0f1014; /* තද කළු පාට */
+        flex-direction: column; /* ලින්ක්ස් පල්ලෙහාට ගන්න */
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        transform: translateX(100%); /* මුලින් හංගලා තියන්න */
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        z-index: 1000;
+    }
+
+    /* JavaScript වලින් .active class එක වැටුනම මෙනු එක එලියට එනවා */
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    /* 2. Hero Section Mobile */
+    .hero-content { padding: 15px; }
+    .hero-content h1 { font-size: 2.2rem; margin-bottom: 15px; }
+    .hero-content p { font-size: 0.9rem; }
+    .btn { padding: 10px 20px; font-size: 0.9rem; margin-bottom: 10px; }
+
+    /* 3. Sections Mobile Adjustment */
+    .section-header h2 { font-size: 2rem; }
+    
+    /* Grid System - හැම කොටසම පේළියට (Single Column) ගන්න */
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
+    .cards-container, .portfolio-grid, .features-grid { 
+        grid-template-columns: 1fr; /* එක පේළියට කාඩ් එකයි */
+    }
+
+    /* Portfolio Cards Mobile Height */
+    .work-img img { height: 200px; min-height: 200px; }
+    
+    /* Footer */
+    .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+    .footer-col { margin-bottom: 20px; }
 }
 
-/* Services */
-.services {
-    padding: 5rem 10%;
-    text-align: center;
-}
-
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.service-card {
-    background: #1a1a1a;
-    padding: 2rem;
-    border-radius: 10px;
-    border: 1px solid #333;
-    transition: 0.3s;
-}
-
-.service-card:hover {
-    border-color: #007bff;
-    transform: translateY(-5px);
-}
-
-.service-card.highlight {
-    border-color: #007bff;
-}
-
-/* Footer */
-footer {
-    padding: 3rem;
-    text-align: center;
-    border-top: 1px solid #333;
-    color: #666;
-    font-size: 0.9rem;
+@media (max-width: 480px) {
+    /* පොඩිම Phones සඳහා */
+    .hero-content h1 { font-size: 1.8rem; }
+    .logo { font-size: 1.5rem; }
 }
